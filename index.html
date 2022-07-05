@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .factura{
+            border: 6px solid black;
+            width: 600px;
+            height: 600px;
+        }
+        .datos{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 600px;
+        }
+        .vendedor{
+            width: 300px;
+            border: 1px solid black;
+            padding-top: 25px;
+        }
+        .fecha{
+            border: 1px solid black;
+            width: 296px;
+            height: 135px;
+        }
+        .comprador{
+            border: 1px solid black;
+            width: 300px;
+            height:70px;
+        }
+        .domicilio{
+            border: 1px solid black;
+            width: 296px;
+            height: 70px;
+        }
+        .afip{
+            display: grid;
+            grid-template-columns: 15% 55% 30%;
+            height: 50px;
+            width: 600px;            
+        }
+        .iva{
+            border: 1px solid black;
+            text-align: center;
+        }
+        .responsable{
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .e{
+            margin-left: 5px;
+        }
+        .cuit{
+            border: 1px solid black;
+          
+        }
+        .venta{
+            display: grid;
+            grid-template-columns: 25% 45% 30%;
+            height: 40px;
+            width: 600px;
+        }
+        .condicion{
+            border: 1px solid black;
+            text-align: center;
+        }
+        .efectivoctacte{
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .remito{
+            border: 1px solid black;
+        }
+        .goma{
+            display: grid;
+            grid-template-columns: 75% 25%;
+        }
+        .compra{
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            height: 35px;
+            width: 598px;
+            border: 1px solid black;
+            background-color: rgb(255, 211, 145);
+        }
+        .compradivision{
+            border: 1px solid black;
+            text-align: center;
+        }
+        .opcionesdecompra{
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            height: 200px;
+            width: 600px;
+        }
+        .borde{
+            height: 25px;
+        }
+        .unidades, .detalles, .totales{
+            border: 1px solid black;
+        }
+        .selectoption{
+            border: none;
+            width: 350px;
+        }
+        .selectunidades{
+            border: none;
+            width: 60px;
+            height: 20px;
+            padding-left: 55px;
+        }
+        .totaldelacompra{
+            display: grid;
+            grid-template-columns: 80% 20%;
+            height: 30px;
+            width: 598px;
+            border: 1px solid black;
+            background-color: rgb(255, 211, 145);
+        }
+        .totaldelacompra1, .totaldelacompra2{
+            border: 1px solid black;
+        }
+        .totaldelacompra2{
+            padding-left: 50px;
+        }
+        .imprenta{
+            display: grid;
+            grid-template-columns: 20% 55% 25%;
+            height: 30px;
+            width: 600px;
+            border: 1px solid black;
+            font-size: small;
+            background-color: bisque;
+        }
+        .bordetotal{
+            padding-left: 50px;
+        }
+        .tipodegomaeva{
+            margin-left: 10px;
+        }
+        .tipo{
+            float: right;
+            margin-right: 10px;
+        }
+        .tipo1{
+            margin-left: 10px;
+        }
+        .tipo3{
+            margin-left: 10px;
+            font-size: x-small;
+        }
+        .tipo2{
+            float: right;
+            margin-right: 10px;
+        }
+        .tipo4{
+            font-size: xx-small;
+        }
+        .borde{
+            border-bottom: 1px dotted black;
+        }
+        .fechita{
+            display: grid;
+            grid-template-columns:  repeat(6, 1fr);
+            text-align: end;
+        }
+        .cuadrado{
+            width: 55px;
+            height: 20px;
+            border: 1px solid black;
+        }
+        .remi{
+            align-items: center;
+            margin-left: 5px;
+        }
+        .letra{
+            width: 40px;
+            height: 60px;
+            border: 1px solid black;
+            font-size: x-large;    
+            position: absolute;
+            left: 290px;
+            top:  50px;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(1);
+            grid-template-rows: 60% 40%;
+        }
+        .fechita{
+            width: 50px;
+            border: none;
+        }
+        .compradorito{
+            width: 200px;
+            border: none; 
+            height: 60px;
+        }
+        .respo{
+            margin-left: 15px;
+        }
+        .a1{
+            width: 40px;
+            height: 20px;
+            border: none;
+        }
+        .numeros{
+            border:none;
+            text-align: end;
+        }
+        .c{
+            margin-left: 10px;
+        }
+        .a{
+            margin-left: 30px;
+        }
+        .d{
+            margin-left: 5px;
+        }
+        .f{
+            margin-left: 5px;
+        }
+        .g{
+            margin-left: 5px;
+        }
+        .cod{
+            font-size: xx-small;
+            margin-left: 5px;
+        }
+
+    </style>
+</head>
+    <div class="factura">
+        <div class="datos">
+            <div class="vendedor">
+                <img src="descarga.png" alt="" width="250px">
+                <label class="respo"> RESPONSABLE MONOTRIBUTO</label>
+            </div>
+            <div class="fecha">
+                <br>
+                <label for="" class="a">Factura: </label>
+                <label for="">N° 0001-00</label><input type="number" class="a1">
+                <br>
+                <div class="fechita">
+                    <div><label for="" class="a">Fecha: </label></div>
+                    <div class="cuadrado">
+                       <input type="number" min="01" max="31" class="fechita">
+                    </div>
+                    <div class="cuadrado">
+                        <input type="number" min="01" max="12" class="fechita">
+                    </div>
+                    <div class="cuadrado">
+                        <input type="number" min="2022" max="2025" class="fechita">
+                    </div>
+                </div>
+                
+                <label for="" class="a">CUIT: 30-76554359-1</label>
+                <br>
+                <label for="" class="a">ING: BRUTOS</label>
+                <br>
+                <label for="" class="a">Inicio de Actividades: 10/06/2012 </label>
+            </div>
+            <div class="comprador">
+                <label for="" class="g">Señor(es)</label>
+                <input type="text" class="compradorito">
+            </div>
+            <div class="domicilio">
+                <label for="" class="g">Domicilio:</label>
+                <input type="text" class="compradorito">
+
+            </div>
+        </div>
+        <div class="afip">
+            <div class="iva">
+                <br>
+                <label for=""> IVA</label>
+            </div>
+            <div class="responsable">
+                <div>
+
+                    <label for="" class="e">Resp. Inscrip.</label> <input type="checkbox" name="" id=""> 
+                </div>
+                <div>
+                    <label for="" class="e">Monotrib.</label> <input type="checkbox" name="" id=""> 
+                </div>
+                <div>
+                    <label for="" class="e">Exento</label> <input type="checkbox" name="" id="">
+                </div>
+                <div>
+                    <label for="" class="e">Cons. Final</label> <input type="checkbox" name="" id="">
+                </div>
+            </div>
+            <div class="cuit">
+                <label for="" class="f">CUIT: </label>
+                <input type="number" name="" id="" class="numeros">
+            </div>
+        </div>
+        <div class="venta">
+            <div class="condicion">
+                <label for=""> Condiciones</label>
+                <br>
+                <label for=""> de Venta</label>
+            </div>
+            <div class="efectivoctacte">
+                <div>
+                    <label for="" class="d">Contado</label> <input type="checkbox" name="" id=""> 
+                </div>
+                <div>
+                    <label for="" class="d">Cta. Cte.</label> <input type="checkbox" name="" id="">
+                </div>
+            </div>
+            <div class="remito">
+                <label for="" class="remi" >REMITO N° :</label>
+                <input type="number" name="" id="" class="numeros">
+            </div>
+        </div>
+        <div class="compra">
+            <div class="compradivision">
+                <span for="" class="detallitos">UNIDADES</span>
+            </div>
+            <div class="compradivision">
+                <span for="" class="detallitos">DETALLE</span>
+            </div>
+            <div class="compradivision">
+                <span for="" class="detallitos">TOTAL</span>
+            </div>
+        </div>
+        <div class="opcionesdecompra">
+            <div class="unidades">
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades1" placeholder="0" class="selectunidades" onchange="resultado1(this.value);">
+                    </div>
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades2" placeholder="0" class="selectunidades" onchange="resultado2(this.value);">
+                    </div>
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades3" placeholder="0" class="selectunidades" onchange="resultado3(this.value);">
+                    </div>
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades4" placeholder="0" class="selectunidades" onchange="resultado4(this.value);">
+                    </div>
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades5" placeholder="0" class="selectunidades" onchange="resultado5(this.value);">
+                    </div>
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades6" placeholder="0" class="selectunidades" onchange="resultado6(this.value);">
+                    </div>
+                    <div class="borde">
+                        <input type="text" id="cantidadUnidades7" placeholder="0" class="selectunidades" onchange="resultado7(this.value);">
+                    </div>
+                </div>
+                <div class="detalles">
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Comun </span> 
+                        </div>
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Brillosa </span>
+                        </div>
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Metalizada </span> 
+                        </div>
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Brillosa Iridiscente </span>
+                        </div>
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Fantasia </span>  
+                        </div>            
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Toalla </span>  
+                        </div>            
+                        <div class="borde goma">
+                                <span value="" class="tipodegomaeva">Goma Eva Ondulada </span>   
+                        </div>            
+                </div>
+                <div class="totales">
+                    <div class="borde bordetotal">
+                        <span id="resultado1"></span>
+                    </div>
+                    <div class="borde bordetotal">
+                        <span id="resultado2" ></span>
+                    </div>
+                    <div class="borde bordetotal">
+                        <span id="resultado3"></span>
+                    </div>
+                    <div class="borde bordetotal">
+                        <span id="resultado4"></span>
+                    </div>
+                    <div class="borde bordetotal">
+                        <span id="resultado5"></span>
+                    </div>
+                    <div class="borde bordetotal">
+                        <span id="resultado6"></span>
+                    </div>
+                    <div class="borde bordetotal" >
+                        <span id="resultado7"></span>
+                    </div>
+                </div>      
+        </div>
+        <div class="totaldelacompra">
+            <div class="totaldelacompra1">
+                <label for="" class="tipo3">Orientacion al Consumidor Provincia de Buenos Aires Tel: 0-800-222-9042</label> 
+                <label for="" class="tipo4">TOTAL N° 13887</label>
+                <label for="" class="tipo2">TOTAL $</label>
+            </div>
+            <div class="totaldelacompra2" id="totaldelacompra2">
+                0
+            </div>
+        </div>
+
+
+
+
+        <div class="imprenta">
+            <div>
+                <label for="" class="tipo1">Imprenta: </label> 
+            </div>
+            <div class="tipo">
+                <label for="" class="tipo">ORIGINAL Blanco</label> 
+                <br>
+                <label for="" class="tipo">DUPLICADO Color</label> 
+            </div>
+            <div>
+                <label for="">C.A.I.: 00000000000000</label>
+                <br>
+                <label for="">VTO.: 00/00/0000</label>
+            </div>
+        </div>
+    </div>
+  
+    <div class="letra">
+        <div>
+            <label for="" class="c">  C</label>
+        </div>
+        <div>
+        <label for="" class="cod">Cod.11</label>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
